@@ -24,27 +24,35 @@ export function useExport({ ref, filename = 't-shirt-design', scale = 2 }: UseEx
   const captureCanvas = useCallback(async (): Promise<HTMLCanvasElement | null> => {
     if (!ref.current) return null;
     try {
+      // Get the actual size of the preview container
+      const rect = ref.current.getBoundingClientRect();
+      const width = Math.round(rect.width);
+      const height = Math.round(rect.height);
+      // Use dom-to-image to export the full preview area as rendered
       const dataUrl = await domtoimage.toPng(ref.current, {
-        bgcolor: null,
+        width,
+        height,
+        bgcolor: '#fff',
         cacheBust: true,
         style: {
-          transform: 'scale(' + scale + ')',
+          transform: 'none',
+          zoom: '1',
         },
       });
       const img = new window.Image();
       img.src = dataUrl;
       await new Promise((resolve) => { img.onload = resolve; });
       const canvas = document.createElement('canvas');
-      canvas.width = img.width;
-      canvas.height = img.height;
+      canvas.width = width;
+      canvas.height = height;
       const ctx = canvas.getContext('2d');
-      if (ctx) ctx.drawImage(img, 0, 0);
+      if (ctx) ctx.drawImage(img, 0, 0, width, height);
       return canvas;
     } catch (err) {
       console.error('Canvas capture failed:', err);
       return null;
     }
-  }, [ref, scale]);
+  }, [ref]);
 
   const exportAsFile = useCallback(async (format: ExportFormat) => {
     setIsExporting(true);
