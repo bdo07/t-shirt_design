@@ -3,13 +3,12 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "scripts": {
-    "dev": "vite",
-    
-    "preview": "vite preview",
-     "build": "npx vite build",
-    "prepare": "npm rebuild esbuild"
-  },
+ "scripts": {
+  "dev": "vite",
+  "build": "npx vite build",
+  "preview": "vite preview",
+  "prepare": "npm rebuild esbuild"
+},
  
   "dependencies": {
     "clsx": "2.1.1",
