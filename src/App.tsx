@@ -610,6 +610,7 @@ function Designer() {
                   <img
                     src={el.content}
                     alt="design"
+                    crossOrigin="anonymous"
                     className="w-full h-full object-contain pointer-events-none select-none"
                   />
                 )}

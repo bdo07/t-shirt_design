@@ -1,5 +1,5 @@
 import { useCallback, useState, RefObject } from 'react';
-import html2canvas from 'html2canvas';
+import domtoimage from 'dom-to-image';
 import jsPDF from 'jspdf';
 
 export type ExportFormat = 'png' | 'jpg' | 'pdf';
@@ -24,13 +24,21 @@ export function useExport({ ref, filename = 't-shirt-design', scale = 2 }: UseEx
   const captureCanvas = useCallback(async (): Promise<HTMLCanvasElement | null> => {
     if (!ref.current) return null;
     try {
-      const canvas = await html2canvas(ref.current, {
-        backgroundColor: null,
-        scale,
-        useCORS: true,
-        logging: false,
-        allowTaint: true,
+      const dataUrl = await domtoimage.toPng(ref.current, {
+        bgcolor: null,
+        cacheBust: true,
+        style: {
+          transform: 'scale(' + scale + ')',
+        },
       });
+      const img = new window.Image();
+      img.src = dataUrl;
+      await new Promise((resolve) => { img.onload = resolve; });
+      const canvas = document.createElement('canvas');
+      canvas.width = img.width;
+      canvas.height = img.height;
+      const ctx = canvas.getContext('2d');
+      if (ctx) ctx.drawImage(img, 0, 0);
       return canvas;
     } catch (err) {
       console.error('Canvas capture failed:', err);
