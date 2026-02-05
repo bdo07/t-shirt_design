@@ -10,9 +10,7 @@
      "build": "npx vite build",
     "prepare": "npm rebuild esbuild"
   },
-  "engines": {
-  "node": "20.x"
-},
+ 
   "dependencies": {
     "clsx": "2.1.1",
     "dom-to-image": "^2.6.0",
