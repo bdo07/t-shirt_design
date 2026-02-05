@@ -8,7 +8,7 @@
     
     "preview": "vite preview",
      "build": "npx vite build",
-    "prepare": "npm rebuild esbuild",
+    "prepare": "npm rebuild esbuild"
   },
   "engines": {
   "node": "20.x"
