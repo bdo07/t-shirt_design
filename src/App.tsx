@@ -42,7 +42,7 @@ interface ShirtConfig {
   view: View;
 }
 
-// --- Constants ---
+
 
 const SHIRT_COLORS = [
   { name: 'White', value: '#ffffff' },
@@ -77,7 +77,7 @@ export function App() {
   );
 }
 
-// --- Designer Component ---
+
 
 function Designer() {
   const { isDark, toggleTheme } = useTheme();
