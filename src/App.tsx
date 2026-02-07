@@ -185,7 +185,7 @@ function Designer() {
           isDark ? 'bg-zinc-900 border-zinc-800' : 'bg-white border-zinc-200'
         }`}
       >
-        {/* Header with Theme Toggle */}
+        
         <div
           className={`p-6 border-b flex items-center justify-between transition-colors duration-300 ${
             isDark ? 'border-zinc-800' : 'border-zinc-100'
