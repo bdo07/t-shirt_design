@@ -237,7 +237,7 @@ function Designer() {
         </div>
 
         <div className="flex-1 overflow-y-auto p-6 space-y-8">
-          {/* Color Selection */}
+         
           <section>
             <label className="text-sm font-semibold mb-3 flex items-center gap-2">
               <Palette size={16} /> Garment Color
