@@ -67,7 +67,7 @@ const FONTS = [
   'Bebas Neue',
 ];
 
-// --- Main App Wrapper ---
+
 
 export function App() {
   return (
