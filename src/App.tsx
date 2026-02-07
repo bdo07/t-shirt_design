@@ -179,7 +179,7 @@ function Designer() {
         isDark ? 'bg-zinc-950 text-zinc-100' : 'bg-zinc-100 text-zinc-900'
       }`}
     >
-      {/* Sidebar Controls */}
+       
       <div
         className={`w-80 flex flex-col h-full shadow-xl z-10 border-r transition-colors duration-300 ${
           isDark ? 'bg-zinc-900 border-zinc-800' : 'bg-white border-zinc-200'
