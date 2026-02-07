@@ -18,7 +18,7 @@ import { useExport } from './hooks/useExport';
 import { ExportModal } from './components/ExportModal';
 import type { ExportFormat } from './hooks/useExport';
 
-// --- Types ---
+
 
 type View = 'front' | 'back' | 'sleeve-left' | 'sleeve-right';
 
