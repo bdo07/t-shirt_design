@@ -156,7 +156,7 @@ function Designer() {
 
   const handleOpenExport = useCallback(() => {
     setSelectedId(null);
-    // Small delay to let selection border disappear before showing modal
+    
     setTimeout(() => setShowExportModal(true), 50);
   }, []);
 
