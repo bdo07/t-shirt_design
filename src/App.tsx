@@ -170,7 +170,7 @@ function Designer() {
     [exportAsFile, exportError]
   );
 
-  // exportComposite is available from useExport for multi-view export if needed
+  
   void exportComposite;
 
   return (
