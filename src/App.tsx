@@ -261,7 +261,7 @@ function Designer() {
             </div>
           </section>
 
-          {/* Add Elements */}
+          
           <section>
             <label className="text-sm font-semibold mb-3 flex items-center gap-2">
               <Layers size={16} /> Add Elements
